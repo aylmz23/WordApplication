@@ -1,0 +1,42 @@
+﻿@model List<Word>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<div class="container-fluid col-11">
+    <br />
+    <h1>Word List</h1>
+    <hr />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>En Name</td>
+            <td>Tr Name</td>
+            <td>Image</td>
+            <td>Update</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>    
+                <td>@item.Id</td>
+                <td>@item.EnName</td>
+                <td>@item.TrName</td>
+                <td><image src="@item.ImageUrl" style="height:100px" /></td>
+                <td><a href="word/update/@item.Id" class="btn btn-outline-info">Update</a></td>
+                <td><a href="word/delete/@item.Id" class="btn btn-danger">Delete</a></td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Word/AddWord" class="btn btn-primary">Yeni Kelime Ekle</a>
+
+</div>
+
+

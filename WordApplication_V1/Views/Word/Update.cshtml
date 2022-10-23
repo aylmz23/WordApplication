@@ -1,0 +1,34 @@
+﻿@model Word
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<span asp-validation-for="@Model.TrName"></span>
+<span asp-validation-for="@Model.EnName"></span>
+<span asp-validation-for="@Model.ImageUrl"></span>
+<form method="post" asp-controller="Word" asp-action="Update">
+
+  <div class="form-group">
+    <label>Türkçe</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" asp-for="@Model.TrName" placeholder="Example input">
+  </div>
+
+  <div class="form-group">
+    <label>İngilizce</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" asp-for="@Model.EnName" placeholder="Another input">
+  </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput3">Resim Url</label>
+        <input type="text" class="form-control" asp-for="@Model.ImageUrl" id="formGroupExampleInput3" placeholder="Another input">
+    </div>
+
+  <div>
+      <button type="submit">Güncelle</button>
+  </div>
+
+
+</form>
